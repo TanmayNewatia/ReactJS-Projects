@@ -29,6 +29,7 @@ class App extends React.Component {
           <p>Text Previewer</p>
           <div id="preview"><ReactMarkdown>{this.state.data}</ReactMarkdown></div>
         </div>
+        <p className="credits">Designed and Made By: Tanmay Newatia</p>
       </div>
     );
   }
