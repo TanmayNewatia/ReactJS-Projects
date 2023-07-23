@@ -27,19 +27,21 @@ function App() {
         }
     });
     return (
-        <div id="drum-machine">
-            <div id="display">
-
+        <div className="App">
+            <div id="drum-machine">
+                <div id="display">
+                </div>
+                <button onClick={playAudio} id="Q" className="drum-pad"><audio className="clip" src={voice1} id="Q" />Q</button>
+                <button onClick={playAudio} id="W" className="drum-pad"><audio className="clip" src={voice2} id="W" />W</button>
+                <button onClick={playAudio} id="E" className="drum-pad"><audio className="clip" src={voice3} id="E" />E</button>
+                <button onClick={playAudio} id="A" className="drum-pad"><audio className="clip" src={voice4} id="A" />A</button>
+                <button onClick={playAudio} id="S" className="drum-pad"><audio className="clip" src={voice5} id="S" />S</button>
+                <button onClick={playAudio} id="D" className="drum-pad"><audio className="clip" src={voice6} id="D" />D</button>
+                <button onClick={playAudio} id="Z" className="drum-pad"><audio className="clip" src={voice7} id="Z" />Z</button>
+                <button onClick={playAudio} id="X" className="drum-pad"><audio className="clip" src={voice8} id="X" />X</button>
+                <button onClick={playAudio} id="C" className="drum-pad"><audio className="clip" src={voice9} id="C" />C</button>
+                <p className="credits">Designed and Made by: Tanmay Newatia</p>
             </div>
-            <button onClick={playAudio} id="Q" className="drum-pad"><audio className="clip" src={voice1} id="Q" />Q</button>
-            <button onClick={playAudio} id="W" className="drum-pad"><audio className="clip" src={voice2} id="W" />W</button>
-            <button onClick={playAudio} id="E" className="drum-pad"><audio className="clip" src={voice3} id="E" />E</button>
-            <button onClick={playAudio} id="A" className="drum-pad"><audio className="clip" src={voice4} id="A" />A</button>
-            <button onClick={playAudio} id="S" className="drum-pad"><audio className="clip" src={voice5} id="S" />S</button>
-            <button onClick={playAudio} id="D" className="drum-pad"><audio className="clip" src={voice6} id="D" />D</button>
-            <button onClick={playAudio} id="Z" className="drum-pad"><audio className="clip" src={voice7} id="Z" />Z</button>
-            <button onClick={playAudio} id="X" className="drum-pad"><audio className="clip" src={voice8} id="X" />X</button>
-            <button onClick={playAudio} id="C" className="drum-pad"><audio className="clip" src={voice9} id="C" />C</button>
         </div>
     );
 }
