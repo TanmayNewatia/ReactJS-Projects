@@ -28,6 +28,9 @@ function App() {
     });
     return (
         <div id="drum-machine">
+            <div id="display">
+
+            </div>
             <button onClick={playAudio} id="Q" className="drum-pad"><audio className="clip" src={voice1} id="Q" />Q</button>
             <button onClick={playAudio} id="W" className="drum-pad"><audio className="clip" src={voice2} id="W" />W</button>
             <button onClick={playAudio} id="E" className="drum-pad"><audio className="clip" src={voice3} id="E" />E</button>
@@ -37,9 +40,6 @@ function App() {
             <button onClick={playAudio} id="Z" className="drum-pad"><audio className="clip" src={voice7} id="Z" />Z</button>
             <button onClick={playAudio} id="X" className="drum-pad"><audio className="clip" src={voice8} id="X" />X</button>
             <button onClick={playAudio} id="C" className="drum-pad"><audio className="clip" src={voice9} id="C" />C</button>
-            <div id="display">
-
-            </div>
         </div>
     );
 }
