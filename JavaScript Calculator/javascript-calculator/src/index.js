@@ -115,7 +115,7 @@ class App extends React.Component {
                 }));
             }
         }
-        else if (this.state.ans!=="") {
+        else if (this.state.ans !== "") {
             this.setState((state) => ({
                 exp: "0.",
                 result: "0."
@@ -154,6 +154,7 @@ class App extends React.Component {
                     <button onClick={() => { this.number("0") }} id="zero">0</button>
                     <button onClick={() => { this.point() }} id="decimal">.</button>
                 </div>
+                <p className="credits">Designed and Made by: Tanmay Newatia</p>
             </div >
         );
     }

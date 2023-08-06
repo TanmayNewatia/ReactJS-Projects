@@ -94,3 +94,13 @@ button:hover {
 #clear {
   background-color: rgb(172, 57, 57);
 }
+
+.credits {
+  margin: 20px auto;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 70%;
+  text-align: center;
+}
