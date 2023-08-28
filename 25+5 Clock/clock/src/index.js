@@ -116,7 +116,7 @@ class App extends React.Component {
         if (this.state.session < 0 || this.state.break < 0 || this.state.session > 60 || this.state.break > 60) {
           this.reset();
         }
-        let s = this.state.second-1;
+        let s = this.state.second - 1;
         let m = Math.floor(s / 60);
         let sec = s - m * 60;
         let res = "";
@@ -204,38 +204,41 @@ class App extends React.Component {
   render() {
     return (
       <div className="App absolute top-2/4 left-2/4 text-white" >
-        <h1 className="text-5xl text-center">25 + 5 Clock</h1>
-        <div className="flex justify-between text-3xl my-4">
-          <div className="flex flex-col align-cneter justify-center">
-            <h3 id="break-label" className="text-center">
-              Break Length
-            </h3>
-            <div className="flex justify-center text-2xl my-2">
-              <button id="break-decrement" onClick={() => { this.breakchange(-1) }}>Dec</button>
-              <p className="mx-4" id="break-length">{this.state.break}</p>
-              <button id="break-increment" onClick={() => { this.breakchange(1) }}>Inc</button>
+        <div className="border-4 border-white p-3 rounded-2xl">
+          <h1 className="text-5xl text-center">25 + 5 Clock</h1>
+          <div className="flex justify-between text-3xl my-4">
+            <div className="flex flex-col align-cneter justify-center">
+              <h3 id="break-label" className="text-center">
+                Break Length
+              </h3>
+              <div className="flex justify-center text-2xl my-2">
+                <button id="break-decrement" onClick={() => { this.breakchange(-1) }}>Dec</button>
+                <p className="mx-4" id="break-length">{this.state.break}</p>
+                <button id="break-increment" onClick={() => { this.breakchange(1) }}>Inc</button>
+              </div>
+            </div>
+            <div className="flex flex-col align-cneter justify-center">
+              <h3 id="session-label" className="text-center">
+                Session Length
+              </h3>
+              <div className="flex justify-center text-2xl my-2">
+                <button id="session-decrement" onClick={() => { this.sessionchange(-1) }}>Dec</button>
+                <p className="mx-4" id="session-length">{this.state.session}</p>
+                <button id="session-increment" onClick={() => { this.sessionchange(1) }}>Inc</button>
+              </div>
             </div>
           </div>
-          <div className="flex flex-col align-cneter justify-center">
-            <h3 id="session-label" className="text-center">
-              Session Length
-            </h3>
-            <div className="flex justify-center text-2xl my-2">
-              <button id="session-decrement" onClick={() => { this.sessionchange(-1) }}>Dec</button>
-              <p className="mx-4" id="session-length">{this.state.session}</p>
-              <button id="session-increment" onClick={() => { this.sessionchange(1) }}>Inc</button>
-            </div>
+          <div className="timer border-4 w-6/12 mx-auto rounded-lg">
+            <h2 className="text-3xl text-center" id="timer-label">{(this.state.sessionrunning) ? "Session" : "Break"}</h2>
+            <h2 className="text-4xl text-center" id="time-left">{this.state.result}</h2>
+            <audio id="beep" src={beep}></audio>
+          </div>
+          <div className="flex justify-center my-4 text-xl">
+            <button id="start_stop" className="mx-4" onClick={() => { this.handless() }}>Start_Stop</button>
+            <button id="reset" className="mx-4" onClick={this.reset}>Reset</button>
           </div>
         </div>
-        <div className="timer border-4 w-6/12 mx-auto rounded-lg">
-          <h2 className="text-3xl text-center" id="timer-label">{(this.state.sessionrunning) ? "Session" : "Break"}</h2>
-          <h2 className="text-4xl text-center" id="time-left">{this.state.result}</h2>
-          <audio id="beep" src={beep}></audio>
-        </div>
-        <div className="flex justify-center my-4 text-xl">
-          <button id="start_stop" className="mx-4" onClick={() => { this.handless() }}>Start_Stop</button>
-          <button id="reset" className="mx-4" onClick={this.reset}>Reset</button>
-        </div>
+        <p className="credits text-center">Designed and Made by: Tanmay Newatia</p>
       </div >
     )
   }

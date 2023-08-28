@@ -21,3 +21,10 @@ code {
   transform: translate(-50%, -50%);
   width: max(350px, 50%);
 }
+
+.credits {
+  margin: 20px auto;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
