@@ -1,44 +1,55 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body {
   overflow-x: hidden;
 }
 
 .editor-header,
 .preview-header {
+  position: relative;
   width: 50%;
-  height: 300px;
+  min-height: 300px;
   margin: 0 auto;
-  background-color: black;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  flex-direction: column;
+  background-color: #2F9599;
   margin-top: 20px;
   border-radius: 10px;
   font-size: 22px;
 }
 
 .preview-header {
+  position: relative;
   margin-top: 20px;
-  background-color: black;
   width: 80%;
-  height: auto;
+  height: 50%;
   max-width: 80%;
 }
 
 #preview {
   border-top: 3px solid white;
-  background-color: black;
+  background-color: white;
   padding: 0 5%;
   width: 90%;
-  height: auto;
+  height: 300px;
   z-index: 2;
-  color: white;
+  color: black;
   border-radius: 0 0 10px 10px;
   object-fit: contain;
+  overflow-y: scroll;
+}
+
+.btn-markdown {
+  background-color: transparent;
+  color: white;
+  font-size: 24px;
+  border: 0;
+  outline: 0;
+}
+
+.head-editor, .head-preview {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .preview-header img {
@@ -46,7 +57,7 @@ body {
 }
 
 #preview>p>img {
-  width: 500px;
+  width: max(200px,70%)
 }
 
 .editor-header>p,
@@ -59,19 +70,14 @@ body {
   font-family: 'Courier New', Courier, monospace;
   border-top: 3px solid white;
   width: 99.2%;
-  height: 80%;
   border-radius: 0 0 10px 10px;
   resize: none;
   scroll-behavior: smooth;
   scroll-snap-type: mandatory;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   font-size: 18px;
-}
-
-.MarkdownApp {
-  padding: 50px;
-  background-color: rgba(0, 0, 0, 0.6);
+  min-height: 300px;
 }
 
 .markdowncredits {

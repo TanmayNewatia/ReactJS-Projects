@@ -1,8 +1,9 @@
 import React from 'react';
-import Markdown from "react-markdown";
+import ReactMarkdown from "marked-react";
 import '../styles/markdown.css';
+import { MdOpenInFull } from "react-icons/md";
 
-export default class MarkdownApp extends React.Component {
+export default class Markdown extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -10,6 +11,8 @@ export default class MarkdownApp extends React.Component {
         }
         this.Change();
         this.Change = this.Change.bind(this);
+        this.Resize();
+        this.Resize = this.Resize.bind(this);
     }
     Change = async () => {
         const val = document.getElementById("editor");
@@ -19,17 +22,41 @@ export default class MarkdownApp extends React.Component {
             })
         }
     }
+
+    Resize = (div) => {
+        const preview = document.getElementById("preview");
+        const editor = document.getElementById("editor");
+        if (preview && editor) {
+            if (div == "1") {
+                console.log("Hello")
+                preview.style.height = "auto";
+                editor.style.height = "300px";
+            }
+            else {
+                console.log("Hello")
+                preview.style.height = "300px";
+                editor.style.height = "1000px";
+            }
+        }
+    }
+
     render() {
-        document.body.style.backgroundColor = "grey";
+        document.body.style.backgroundColor = "#474747";
         return (
             <div className="markdownApp" >
                 <div className="editor-header">
-                    <p>Text Editor</p>
+                    <div className="head-editor">
+                        <p>Text Editor</p>
+                        <button onClick={() => { this.Resize(0) }} className="btn-markdown"><MdOpenInFull /></button>
+                    </div>
                     <textarea id="editor" value={this.state.data} onChange={this.Change}></textarea>
                 </div>
                 <div className="preview-header">
-                    <p>Text Previewer</p>
-                    <div id="preview"><Markdown>{this.state.data}</Markdown></div>
+                    <div className="head-preview">
+                        <p>Text Previewer</p>
+                        <button onClick={() => { this.Resize(1) }} className="btn-markdown"><MdOpenInFull /></button>
+                    </div>
+                    <div id="preview"><ReactMarkdown>{this.state.data}</ReactMarkdown></div>
                 </div>
                 <p className="markdowncredits">Designed and Made By: Tanmay Newatia</p>
             </div>
